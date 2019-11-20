@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:gravity="center_horizontal"
+            android:textSize="@dimen/_13sdp"
+            android:textStyle="bold" />
+
+        <!-- Name -->
+        <RelativeLayout
+            android:id="@+id/rlEditPokemonName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvEditPokemonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_name_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEditPokemonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEditPokemonName"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/edit_pokemon_name_label"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+        <!-- Generation -->
+        <RelativeLayout
+            android:id="@+id/rlEditPokemonGeneration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvEditPokemonGeneration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_generation_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSelectPokemonGeneration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEditPokemonGeneration"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_toStartOf="@+id/ivPokemonGenerationArrow"
+                android:layout_toLeftOf="@+id/ivPokemonGenerationArrow"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <ImageView
+                android:id="@+id/ivPokemonGenerationArrow"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/drawable_nav_down" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@+id/tvSelectPokemonGeneration"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
+        <!-- Type -->
+        <RelativeLayout
+            android:id="@+id/rlEditPokemonType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvEditPokemonType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_type_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/llEditPokemonType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEditPokemonType"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvPokemonTypeMain"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:hint="@string/main_type"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+                <TextView
+                    android:id="@+id/tvPokemonTypeSecond"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight=".5"
+                    android:hint="@string/second_type"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/_11sdp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@+id/llEditPokemonType"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
+        <!-- Description -->
+        <RelativeLayout
+            android:id="@+id/rlEditPokemonDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvEditPokemonDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_description_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEditPokemonDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEditPokemonDescription"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/edit_pokemon_description_label"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+        <!-- Power -->
+        <LinearLayout
+            android:id="@+id/rlEditPokemonPower"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvEditPokemonPower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_power_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvEditPokemonPowerLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:text="@string/edit_pokemon_add_in_future_label"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Ranking -->
+        <RelativeLayout
+            android:id="@+id/rlEditPokemonRanking"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvEditPokemonRanking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_ranking_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPokemonRanking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEditPokemonRanking"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_toStartOf="@+id/ivPokemonRankingArrow"
+                android:layout_toLeftOf="@+id/ivPokemonRankingArrow"
+                android:padding="@dimen/_10sdp"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/_11sdp" />
+
+            <ImageView
+                android:id="@+id/ivPokemonRankingArrow"
+                android:layout_width="@dimen/_18sdp"
+                android:layout_height="@dimen/_18sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/drawable_nav_down" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_below="@+id/tvPokemonRanking"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:background="@android:color/darker_gray" />
+
+        </RelativeLayout>
+
+        <!-- Address -->
+        <RelativeLayout
+            android:id="@+id/rlEditPokemonAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvEditPokemonAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/edit_pokemon_address_label"
+                android:textSize="@dimen/_13sdp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etEditPokemonAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvEditPokemonAddress"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:hint="@string/edit_pokemon_address_label"
+                android:importantForAutofill="no"
+                android:inputType="text"
+                android:textSize="@dimen/_11sdp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnEditAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_30sdp" />
+
+    </LinearLayout>
+
+</ScrollView>

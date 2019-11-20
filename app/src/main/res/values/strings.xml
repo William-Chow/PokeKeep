@@ -1,0 +1,106 @@
+<resources>
+    <string name="app_name">PokeKeep</string>
+
+    <string name="dialogNoticeTitle">Notice</string>
+    <string name="dialogUnknownMessage">System Error</string>
+    <string name="dialogDeleteMessage">Are you sure you want to delete this?</string>
+    <string name="dialogDeleteSuccessful">Delete Successful</string>
+    <string name="dialogLoginMessage">Please login in order to proceed</string>
+    <string name="dialogAddedSuccessMessage">Added Successfully</string>
+    <string name="dialogEditSuccessMessage">Edit Successfully</string>
+
+    <string name="btnOk">OK</string>
+    <string name="btnCancel">Cancel</string>
+
+    <!-- Image View Usage -->
+    <string name="content_description">content description</string>
+
+    <!--  未知错误-->
+    <string name="unknown_error">Unknown Error</string>
+
+    <!--  网络不可用-->
+    <string name="unknown_host_error">Internet Error</string>
+
+    <!--  请求网络超时-->
+    <string name="socket_time_out_error">Connection Timed Out</string>
+
+    <!--  数据解析错误-->
+    <string name="data_invalid">Data Invalid</string>
+
+    <!--  服务器发生错误-->
+    <string name="server_error">Server Error</string>
+
+    <!--  请求地址不存在-->
+    <string name="address_error">Address Not Found</string>
+
+    <!--  请求被服务器拒绝-->
+    <string name="server_rejected">Server Rejected</string>
+
+    <!--  请求被重定向到其他页面-->
+    <string name="error_connection">Error to Other Pages</string>
+
+    <!-- Splash Fragment -->
+    <string name="please_wait">Please wait</string>
+    <string name="second">seconds</string>
+
+    <!-- Bottom Navigation Menu Text -->
+    <string name="profile_tab">Profile</string>
+    <string name="pokeDex_tab">PokeDex</string>
+
+    <!-- Register -->
+    <string name="register_an_account">Register an Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+
+    <string name="registerEmailCannotBeEmpty">Email cannot be empty.</string>
+    <string name="registerEmailInvalid">Email are invalid</string>
+    <string name="registerPasswordCannotEmpty">Password cannot be empty.</string>
+    <string name="registerPasswordLess">Password cannot less than 6</string>
+
+    <string name="registration_success">Registration successful</string>
+    <string name="registration_fail">Registration failed</string>
+
+    <!-- Login -->
+    <string name="account_login">Account Login</string>
+    <string name="login">Login</string>
+    <string name="loginRememberPassword">Remember Me</string>
+
+    <string name="loginEmailCannotBeEmpty">Email cannot be empty.</string>
+    <string name="loginEmailInvalid">Email are invalid</string>
+    <string name="loginPasswordCannotEmpty">Password cannot be empty.</string>
+    <string name="loginPasswordLess">Password cannot less than 6</string>
+
+    <string name="login_success">Login successful</string>
+    <string name="login_fail">Login failed</string>
+
+    <!-- Member Info -->
+    <string name="logout">Logout</string>
+
+    <!-- Listing -->
+
+    <!-- Poke Detail -->
+    <string name="name_label">Name: </string>
+    <string name="generation_label">Generation: </string>
+    <string name="type_label">Type: </string>
+    <string name="description_label">Description: </string>
+    <string name="skill_label">Skill: </string>
+
+    <!-- Edit Pokemon -->
+    <string name="edit_pokemon_name_label">Pokemon Name: </string>
+    <string name="edit_pokemon_generation_label">Generation: </string>
+    <string name="edit_pokemon_type_label">Type: </string>
+    <string name="main_type">Main</string>
+    <string name="second_type">Second</string>
+    <string name="edit_pokemon_description_label">Description: </string>
+    <string name="edit_pokemon_power_label">Power: </string>
+    <string name="edit_pokemon_add_in_future_label">*Add in Future</string>
+    <string name="edit_pokemon_ranking_label">Ranking: </string>
+    <string name="edit_pokemon_address_label">Address: </string>
+
+    <string name="btnAdd">Add</string>
+    <string name="btnEdit">Edit</string>
+
+    <string name="addTitle">Add Pokemon</string>
+    <string name="editTitle">Edit Pokemon</string>
+</resources>

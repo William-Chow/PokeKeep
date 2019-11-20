@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.william.pokekeep.mvp.ui.activity.MainActivity">
+
+    <item
+        android:id="@+id/menu_profile"
+        android:icon="@drawable/drawable_profile"
+        android:title="@string/profile_tab" />
+
+    <item
+        android:id="@+id/menu_pokeDex"
+        android:icon="@drawable/drawable_poke_dex"
+        android:title="@string/pokeDex_tab" />
+</menu>

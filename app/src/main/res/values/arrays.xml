@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="menuListArray">
+        <item>Edit</item>
+        <item>Delete</item>
+    </array>
+
+    <array name="menuPokemonGenerationListArray">
+        <item>Pokémon FireRed and LeafGreen</item>
+        <item>Pokémon Gold and Silver</item>
+        <item>Pokémon Ruby and Sapphire</item>
+        <item>Pokémon Diamond and Pearl</item>
+        <item>Pokémon Black and White</item>
+        <item>Pokémon X and Y</item>
+    </array>
+
+    <array name="menuTypeListArray">
+        <item>Grass</item>
+        <item>Fire</item>
+        <item>Water</item>
+        <item>Fighting</item>
+        <item>Steel</item>
+        <item>Poison</item>
+        <item>Flying</item>
+        <item>Ground</item>
+        <item>Psychic</item>
+        <item>Ghost</item>
+        <item>Ice</item>
+        <item>Normal</item>
+        <item>Rock</item>
+        <item>Dark</item>
+        <item>Dragon</item>
+        <item>Bug</item>
+        <item>Fairy</item>
+        <item>Electric</item>
+    </array>
+
+    <array name="menuRankingListArray">
+        <item>Ranking 1</item>
+        <item>Ranking 2</item>
+        <item>Ranking 3</item>
+    </array>
+</resources>

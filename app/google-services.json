@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1092127430194",
+    "firebase_url": "https://poke-keep.firebaseio.com",
+    "project_id": "poke-keep",
+    "storage_bucket": "poke-keep.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1092127430194:android:63562f6c90a6a1b0024e2b",
+        "android_client_info": {
+          "package_name": "com.william.pokekeep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1092127430194-7stsbmteclv2h0lul14diduatps6878l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqvgFjMlLIS02vxjgOkoKcO7if1MXB3XE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1092127430194-7stsbmteclv2h0lul14diduatps6878l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

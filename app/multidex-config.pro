@@ -1,0 +1,2 @@
+-keep class com.xw.client.website.GlobalConfiguration
+-keep class com.** { *; }
