@@ -109,11 +109,11 @@ public class PokeListingPresenter extends BasePresenter<Repository> {
             rvPokeList.setLayoutManager(linearLayoutManager);
 
             if (result.size() > 0) {
-                if (null != pokeListAdapter) {
-                    pokeListAdapter.clear();
-                    pokeListAdapter.addAll(result);
-                    pokeListAdapter.notifyDataSetChanged();
-                } else {
+//                if (null != pokeListAdapter) {
+//                    pokeListAdapter.clear();
+//                    pokeListAdapter.addAll(result);
+//                    pokeListAdapter.notifyDataSetChanged();
+//                } else {
                     pokeListAdapter = new PokeListAdapter(activity, result);
                     pokeListAdapter.setOnClickListener(new PokeListAdapter.AdapterOnClickListener() {
                         @Override
@@ -133,7 +133,7 @@ public class PokeListingPresenter extends BasePresenter<Repository> {
                         }
                     });
                     rvPokeList.setAdapter(pokeListAdapter);
-                }
+//                }
             }
         }
     }

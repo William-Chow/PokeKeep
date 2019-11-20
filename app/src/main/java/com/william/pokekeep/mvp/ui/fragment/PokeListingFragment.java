@@ -5,18 +5,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.william.pokekeep.R;
+import com.william.pokekeep.app.utils.Constant;
 import com.william.pokekeep.app.utils.PresenterKit;
 import com.william.pokekeep.app.utils.PromptAlertDialogKit;
 import com.william.pokekeep.app.utils.Utils;
 import com.william.pokekeep.mvp.model.entity.PokeDexObj;
 import com.william.pokekeep.mvp.presenter.PokeListingPresenter;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -56,6 +59,8 @@ public class PokeListingFragment extends BaseFragment<PokeListingPresenter> impl
 
     @BindView(R.id.rvPokeList)
     RecyclerView rvPokeList;
+
+    List<PokeDexObj> result = new ArrayList<>();
 
     public static PokeListingFragment newInstance() {
         Bundle args = new Bundle();
@@ -110,7 +115,7 @@ public class PokeListingFragment extends BaseFragment<PokeListingPresenter> impl
         checkNotNull(message);
         switch (message.what) {
             case PresenterKit.POKE_LIST:
-                List<PokeDexObj> result = (List<PokeDexObj>) message.obj;
+                result = (List<PokeDexObj>) message.obj;
                 if (null != mPresenter) {
                     mPresenter.setupRecyclerView(PresenterKit.obtainMessage(PokeListingFragment.this), PokeListingFragment.this, rvPokeList, result);
                 }
@@ -133,6 +138,7 @@ public class PokeListingFragment extends BaseFragment<PokeListingPresenter> impl
         switch (view.getId()) {
             case R.id.tvRightText:
                 // Add
+                Constant.pokeEditFragment = new PokeEditFragment();
                 Utils.startPokeEditFragment(PokeListingFragment.this, true, -1);
                 break;
             default:

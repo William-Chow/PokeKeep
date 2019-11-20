@@ -50,7 +50,11 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IView {
         firebaseAuth = FirebaseAuth.getInstance();
         setupNavigation();
         // 显示首页
-        showFragment(Constant.SPLASH_FRAGMENT);
+        if (firebaseAuth.getCurrentUser() != null) {
+            showFragment(Constant.MEMBER_INFO_FRAGMENT);
+        } else {
+            showFragment(Constant.SPLASH_FRAGMENT);
+        }
     }
 
     @Nullable
@@ -127,6 +131,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IView {
                 }
                 break;
             case Constant.MEMBER_INFO_FRAGMENT:
+                if (Constant.pokeListingFragment != null) {
+                    ft.hide(Constant.pokeListingFragment);
+                }
                 if (memberInfoFragment == null) {
                     memberInfoFragment = new MemberInfoFragment();
                     ft.add(R.id.flContainer, memberInfoFragment, MemberInfoFragment.class.getName());
