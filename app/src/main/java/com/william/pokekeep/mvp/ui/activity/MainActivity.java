@@ -134,6 +134,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IView {
                 if (Constant.pokeListingFragment != null) {
                     ft.hide(Constant.pokeListingFragment);
                 }
+                if (Constant.memberLoginFragment != null) {
+                    ft.hide(Constant.memberLoginFragment);
+                }
                 if (memberInfoFragment == null) {
                     memberInfoFragment = new MemberInfoFragment();
                     ft.add(R.id.flContainer, memberInfoFragment, MemberInfoFragment.class.getName());
@@ -144,6 +147,9 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IView {
             case Constant.POKE_LIST_FRAGMENT:
                 if (Constant.memberInfoFragment != null) {
                     ft.hide(Constant.memberInfoFragment);
+                }
+                if (Constant.memberLoginFragment != null) {
+                    ft.hide(Constant.memberLoginFragment);
                 }
                 if (pokeListingFragment == null) {
                     pokeListingFragment = new PokeListingFragment();
