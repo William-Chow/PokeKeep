@@ -85,7 +85,7 @@ dependencies {
         exclude module: 'retrofit'
         exclude module: 'okio'
     }
-    api 'com.squareup.okhttp3:okhttp:4.2.2'
+    api 'com.squareup.okhttp3:okhttp:4.5.0'
     compileOnly rootProject.ext.dependencies["glide"]
     annotationProcessor('androidx.annotation:annotation:1.1.0'){
         exclude module: 'jsr305'
