@@ -213,6 +213,7 @@ public class DefaultFormatPrinter implements FormatPrinter {
         String header = request.headers().toString();
         log = METHOD_TAG + request.method() + DOUBLE_SEPARATOR +
                 (isEmpty(header) ? "" : HEADERS_TAG + LINE_SEPARATOR + dotHeaders(header));
+        assert LINE_SEPARATOR != null;
         return log.split(LINE_SEPARATOR);
     }
 
@@ -224,6 +225,7 @@ public class DefaultFormatPrinter implements FormatPrinter {
                 + isSuccessful + " - " + RECEIVED_TAG + tookMs + "ms" + DOUBLE_SEPARATOR + STATUS_CODE_TAG +
                 code + " / " + message + DOUBLE_SEPARATOR + (isEmpty(header) ? "" : HEADERS_TAG + LINE_SEPARATOR +
                 dotHeaders(header)));
+        assert LINE_SEPARATOR != null;
         return log.split(LINE_SEPARATOR);
     }
 
@@ -242,6 +244,7 @@ public class DefaultFormatPrinter implements FormatPrinter {
      * @return
      */
     private static String dotHeaders(String header) {
+        assert LINE_SEPARATOR != null;
         String[] headers = header.split(LINE_SEPARATOR);
         StringBuilder builder = new StringBuilder();
         String tag = "─ ";

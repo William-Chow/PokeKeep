@@ -62,7 +62,7 @@ public class BasePresenter<M extends IModel> implements IPresenter, LifecycleObs
     }
 
     /**
-     * 在框架中 {@link Activity#onDestroy()} 时会默认调用 {@link IPresenter#onDestroy()}
+     * 在框架中  时会默认调用 {@link IPresenter#onDestroy()}
      */
     @Override
     public void onDestroy() {
@@ -107,7 +107,7 @@ public class BasePresenter<M extends IModel> implements IPresenter, LifecycleObs
 
     /**
      * 将 {@link Disposable} 添加到 {@link CompositeDisposable} 中统一管理
-     * 可在 {@link Activity#onDestroy()} 中使用 {@link #unDispose()} 停止正在执行的 RxJava 任务,避免内存泄漏(框架已自行处理)
+     * 可在  中使用 {@link #unDispose()} 停止正在执行的 RxJava 任务,避免内存泄漏(框架已自行处理)
      *
      * @param disposable
      */

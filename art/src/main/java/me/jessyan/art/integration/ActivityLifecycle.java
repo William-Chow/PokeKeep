@@ -22,6 +22,8 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -92,7 +94,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
     }
 
     @Override
-    public void onActivityStarted(Activity activity) {
+    public void onActivityStarted(@NotNull Activity activity) {
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {
             activityDelegate.onStart();
@@ -100,7 +102,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
     }
 
     @Override
-    public void onActivityResumed(Activity activity) {
+    public void onActivityResumed(@NotNull Activity activity) {
         mAppManager.setCurrentActivity(activity);
 
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
@@ -110,7 +112,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
     }
 
     @Override
-    public void onActivityPaused(Activity activity) {
+    public void onActivityPaused(@NotNull Activity activity) {
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {
             activityDelegate.onPause();
@@ -118,7 +120,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
     }
 
     @Override
-    public void onActivityStopped(Activity activity) {
+    public void onActivityStopped(@NotNull Activity activity) {
         if (mAppManager.getCurrentActivity() == activity) {
             mAppManager.setCurrentActivity(null);
         }
@@ -130,7 +132,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
     }
 
     @Override
-    public void onActivitySaveInstanceState(Activity activity, Bundle outState) {
+    public void onActivitySaveInstanceState(@NotNull Activity activity, @NotNull Bundle outState) {
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
         if (activityDelegate != null) {
             activityDelegate.onSaveInstanceState(outState);
@@ -138,7 +140,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
     }
 
     @Override
-    public void onActivityDestroyed(Activity activity) {
+    public void onActivityDestroyed(@NotNull Activity activity) {
         mAppManager.removeActivity(activity);
 
         ActivityDelegate activityDelegate = fetchActivityDelegate(activity);
@@ -156,7 +158,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
      * @param activity
      */
     private void registerFragmentCallbacks(Activity activity) {
-        boolean useFragment = activity instanceof IActivity ? ((IActivity) activity).useFragment() : true;
+        boolean useFragment = !(activity instanceof IActivity) || ((IActivity) activity).useFragment();
         if (activity instanceof FragmentActivity && useFragment) {
 
             //mFragmentLifecycle 为 Fragment 生命周期实现类, 用于框架内部对每个 Fragment 的必要操作, 如给每个 Fragment 配置 FragmentDelegate
@@ -165,6 +167,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
             if (mExtras.containsKey(IntelligentCache.getKeyOfKeep(ConfigModule.class.getName()))) {
                 List<ConfigModule> modules = (List<ConfigModule>) mExtras.get(IntelligentCache.getKeyOfKeep(ConfigModule.class.getName()));
+                assert modules != null;
                 for (ConfigModule module : modules) {
                     module.injectFragmentLifecycle(mApplication, mFragmentLifecycles.get());
                 }
@@ -189,7 +192,7 @@ public class ActivityLifecycle implements Application.ActivityLifecycleCallbacks
 
     @NonNull
     private Cache<String, Object> getCacheFromActivity(IActivity activity) {
-        Cache<String, Object> cache = activity.provideCache();
+        Cache cache = activity.provideCache();
         Preconditions.checkNotNull(cache, "%s cannot be null on Activity", Cache.class.getName());
         return cache;
     }

@@ -22,6 +22,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import android.view.View;
 
+import org.jetbrains.annotations.NotNull;
+
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
@@ -50,7 +52,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentAttached(FragmentManager fm, Fragment f, Context context) {
+    public void onFragmentAttached(@NotNull FragmentManager fm, @NotNull Fragment f, @NotNull Context context) {
         if (f instanceof IFragment) {
             FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
             if (fragmentDelegate == null || !fragmentDelegate.isAdded()) {
@@ -65,7 +67,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentCreated(FragmentManager fm, Fragment f, Bundle savedInstanceState) {
+    public void onFragmentCreated(@NotNull FragmentManager fm, @NotNull Fragment f, Bundle savedInstanceState) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onCreate(savedInstanceState);
@@ -73,7 +75,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentViewCreated(FragmentManager fm, Fragment f, View v, Bundle savedInstanceState) {
+    public void onFragmentViewCreated(@NotNull FragmentManager fm, @NotNull Fragment f, @NotNull View v, Bundle savedInstanceState) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onCreateView(v, savedInstanceState);
@@ -81,7 +83,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentActivityCreated(FragmentManager fm, Fragment f, Bundle savedInstanceState) {
+    public void onFragmentActivityCreated(@NotNull FragmentManager fm, @NotNull Fragment f, Bundle savedInstanceState) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onActivityCreate(savedInstanceState);
@@ -89,7 +91,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentStarted(FragmentManager fm, Fragment f) {
+    public void onFragmentStarted(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onStart();
@@ -97,7 +99,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentResumed(FragmentManager fm, Fragment f) {
+    public void onFragmentResumed(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onResume();
@@ -105,7 +107,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentPaused(FragmentManager fm, Fragment f) {
+    public void onFragmentPaused(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onPause();
@@ -113,7 +115,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentStopped(FragmentManager fm, Fragment f) {
+    public void onFragmentStopped(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onStop();
@@ -121,7 +123,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentSaveInstanceState(FragmentManager fm, Fragment f, Bundle outState) {
+    public void onFragmentSaveInstanceState(@NotNull FragmentManager fm, @NotNull Fragment f, @NotNull Bundle outState) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onSaveInstanceState(outState);
@@ -129,7 +131,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentViewDestroyed(FragmentManager fm, Fragment f) {
+    public void onFragmentViewDestroyed(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onDestroyView();
@@ -137,7 +139,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentDestroyed(FragmentManager fm, Fragment f) {
+    public void onFragmentDestroyed(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onDestroy();
@@ -145,7 +147,7 @@ public class FragmentLifecycle extends FragmentManager.FragmentLifecycleCallback
     }
 
     @Override
-    public void onFragmentDetached(FragmentManager fm, Fragment f) {
+    public void onFragmentDetached(@NotNull FragmentManager fm, @NotNull Fragment f) {
         FragmentDelegate fragmentDelegate = fetchFragmentDelegate(f);
         if (fragmentDelegate != null) {
             fragmentDelegate.onDetach();
