@@ -70,7 +70,7 @@ dependencies {
     //support
     implementation rootProject.ext.dependencies["cardview-v7"]
     //noinspection GradleDependency
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.android.material:material:1.2.1'
 
     implementation rootProject.ext.dependencies["androideventbus"]
 
@@ -86,7 +86,7 @@ dependencies {
     annotationProcessor(rootProject.ext.dependencies["butterknife-compiler"]) {
         exclude module: 'support-annotations'
     }
-    implementation rootProject.ext.dependencies["paginate"]
+    implementation 'com.github.markomilos:paginate:1.0.0'
 
     // Image Slider
     implementation rootProject.ext.dependencies["image-slider"]
@@ -101,16 +101,16 @@ dependencies {
 
     implementation 'me.jessyan:art-imageloader-glide:2.5.0'
 
-    implementation 'com.google.firebase:firebase-analytics:17.4.0'
+    implementation 'com.google.firebase:firebase-analytics:18.0.0'
 
     //test
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.1'
     debugImplementation rootProject.ext.dependencies["canary-debug"]
     releaseImplementation rootProject.ext.dependencies["canary-release"]
     testImplementation rootProject.ext.dependencies["canary-release"]
 
 
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-auth:20.0.0'
 }
 apply plugin: 'com.google.gms.google-services'
